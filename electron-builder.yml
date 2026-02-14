@@ -1,0 +1,37 @@
+appId: com.blendertofivem.converter
+productName: Blender to FiveM
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - "!**/.vscode/*"
+  - "!src/*"
+  - "!scripts/*"
+  - "!native/*"
+  - "!{.eslintrc.cjs,.prettierrc}"
+  - "!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}"
+  - "!{vite.main.config.ts,vite.preload.config.ts,vite.renderer.config.ts}"
+win:
+  target: nsis
+  icon: resources/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+extraResources:
+  - from: native/codewalker-service/publish/
+    to: codewalker-service/
+    filter:
+      - "**/*"
+  - from: native/texconv/
+    to: texconv/
+    filter:
+      - "**/*"
+  - from: native/blender-scripts/
+    to: blender-scripts/
+    filter:
+      - "**/*"
+  - from: resources/templates/
+    to: templates/
+    filter:
+      - "**/*"
+asar: true
