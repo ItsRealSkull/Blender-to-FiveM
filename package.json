@@ -4,7 +4,10 @@
   "description": "Convert Blender 3D models to FiveM-ready custom props",
   "main": "./out/main/index.js",
   "scripts": {
+    "check-deps": "node -e \"if(!require('fs').existsSync('node_modules')){process.exit(1)}\" || npm install",
+    "predev": "npm run check-deps",
     "dev": "electron-vite dev",
+    "prebuild": "npm run check-deps",
     "build": "electron-vite build",
     "start": "electron-vite preview",
     "postinstall": "electron-builder install-app-deps",
