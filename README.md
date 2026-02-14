@@ -1,2 +1,4 @@
 # Blender-to-FiveM
-Un tool che converte facilmente risorse di blender in prop per FiveM
+A tool that easily converts Blender resources into props for FiveM
+
+Just click on the .bat file to start transforming your resources!
